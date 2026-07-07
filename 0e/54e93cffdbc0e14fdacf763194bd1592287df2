@@ -1,0 +1,43 @@
+staging/src/k8s.io/apiserver/pkg/storage/etcd3/store_test.go
+  s_18cec3aa740e51::t_36063f98f28907 1093,1100-1101,1111-1112,1119,1121,1124,1127,1130,1141,1143,1146,1149,1152,1158,1161,1164-1166,1168-1228,1277,1282,1287
+  s_18cec3aa740e51::t_32cd89dddddc68 1092
+  s_18cec3aa740e51::t_dfcb7bd774bb51 1094-1099
+  s_18cec3aa740e51::t_aa380112e89a64 1102-1104,1108-1110
+  s_18cec3aa740e51::t_5aa848ca838811 1113-1118
+  s_18cec3aa740e51::t_4d2bd13d2fb60a 1120
+  s_18cec3aa740e51::t_6f39eceae503fc 1122-1123
+  s_18cec3aa740e51::t_fe4265e9aaab23 1125-1126
+  s_18cec3aa740e51::t_52b031db162974 1128-1129
+  s_18cec3aa740e51::t_cfeb83556c2fe4 1131-1133,1138-1140
+  s_18cec3aa740e51::t_6d230b6ff06139 1142
+  s_18cec3aa740e51::t_260d68898540cc 1144-1145
+  s_18cec3aa740e51::t_e61bf16a6278b3 1147-1148
+  s_18cec3aa740e51::t_fb33a1f56cdb49 1150-1151
+  s_18cec3aa740e51::t_9422b5ce2cdf6f 1153-1157
+  s_18cec3aa740e51::t_2fbcdad6743669 1159-1160
+  s_18cec3aa740e51::t_067a5825e52c49 1162-1163
+  s_18cec3aa740e51::t_5b0f68df60158b 1167
+  s_18cec3aa740e51::t_66c11a426f6769 1275-1276
+  s_18cec3aa740e51::t_78f91b2390167a 1278-1281
+  s_18cec3aa740e51::t_c07c6f6bbbf0be 1283-1286
+  s_18cec3aa740e51::t_836fde306a4139 1288
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "0e54e93cffdbc0e14fdacf763194bd1592287df2",
+  "prompts": {},
+  "sessions": {
+    "s_18cec3aa740e51": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4b66fec08371afde98f05e",
+        "model": "openrouter-3o__dev",
+        "display_model_name": "openrouter-3o"
+      },
+      "human_author": null
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
