@@ -121,9 +121,13 @@ func newCacheIntervalFromLazySnapshot(resourceVersion uint64, snap store.Snapsho
 }
 
 func storeElementToWatchCacheEvent(elem *store.Element, resourceVersion uint64) *watchCacheEvent {
+	object := elem.Object
+	if cachingObject, err := newCachingObject(elem.Object); err == nil {
+		object = cachingObject
+	}
 	return &watchCacheEvent{
 		Type:            watch.Added,
-		Object:          elem.Object,
+		Object:          object,
 		ObjLabels:       elem.Labels,
 		ObjFields:       elem.Fields,
 		Key:             elem.Key,

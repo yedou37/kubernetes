@@ -103,6 +103,13 @@ func verifyNoEvent(ok bool, event *watchCacheEvent) error {
 	return nil
 }
 
+func unwrapCacheableObject(obj runtime.Object) runtime.Object {
+	if cacheable, ok := obj.(runtime.CacheableObject); ok {
+		return cacheable.GetObject()
+	}
+	return obj
+}
+
 func TestIntervalBufferIsFull(t *testing.T) {
 	cases := []struct {
 		endIndex int
@@ -421,8 +428,14 @@ func TestCacheIntervalNextFromStore(t *testing.T) {
 		if !ok {
 			t.Fatalf("event with key %s not found", event.Key)
 		}
-		if !reflect.DeepEqual(event, expectedEvent) {
-			t.Errorf("expected: %v, got %v", *events[event.Key], *event)
+		if _, ok := event.Object.(runtime.CacheableObject); !ok {
+			t.Fatalf("expected init event object to support caching, got %T", event.Object)
+		}
+		if event.Type != expectedEvent.Type || event.Key != expectedEvent.Key || event.ResourceVersion != expectedEvent.ResourceVersion {
+			t.Errorf("expected metadata: %#v, got %#v", *expectedEvent, *event)
+		}
+		if !reflect.DeepEqual(unwrapCacheableObject(event.Object), expectedEvent.Object) {
+			t.Errorf("expected object: %#v, got %#v", expectedEvent.Object, unwrapCacheableObject(event.Object))
 		}
 	}
 
@@ -523,6 +536,20 @@ func TestCacheIntervalSourceSelection(t *testing.T) {
 				if _, ok := wci.source.(*snapshotCacheIntervalSource); !ok {
 					t.Errorf("expected *snapshotCacheIntervalSource, got %T", wci.source)
 				}
+			}
+
+			event, err := wci.Next()
+			if err != nil {
+				t.Fatalf("unexpected error getting init event: %v", err)
+			}
+			if event == nil {
+				t.Fatal("expected non-nil init event")
+			}
+			if _, ok := event.Object.(runtime.CacheableObject); !ok {
+				t.Fatalf("expected init event object to support caching, got %T", event.Object)
+			}
+			if got := unwrapCacheableObject(event.Object); !reflect.DeepEqual(got, makeTestPod("pod1", 100)) {
+				t.Fatalf("expected init event object %#v, got %#v", makeTestPod("pod1", 100), got)
 			}
 		})
 	}
