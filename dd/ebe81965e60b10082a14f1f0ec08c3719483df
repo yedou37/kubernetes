@@ -1,0 +1,63 @@
+staging/src/k8s.io/apiserver/pkg/storage/etcd3/store_test.go
+  s_18cec3aa740e51::t_7eee156c1ad5fc 1097 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a559cc9c08371afde990ea3","tool_type":"agent","tool_id":"Edit","line_ranges":[{"Single":1097}]}]}
+  s_18cec3aa740e51::t_7c75dd2d6f95ad 1094-1096
+  s_18cec3aa740e51::t_cd2709fb8c6c88 1098-1100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "ddebe81965e60b10082a14f1f0ec08c3719483df",
+  "prompts": {},
+  "sessions": {
+    "s_18cec3aa740e51": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4b66fec08371afde98f05e",
+        "model": "openrouter-3o__dev",
+        "display_model_name": "openrouter-3o"
+      },
+      "human_author": "YeRongyu <yedou37@zju.edu.cn>"
+    }
+  },
+  "attestation_metadata": {
+    "staging/src/k8s.io/apiserver/pkg/storage/etcd3/store_test.go": [
+      {
+        "hash": "s_18cec3aa740e51::t_7eee156c1ad5fc",
+        "line_ranges": [
+          {
+            "Single": 1097
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a559cc9c08371afde990ea3",
+            "tool_type": "agent",
+            "tool_id": "Edit",
+            "line_ranges": [
+              {
+                "Single": 1097
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_18cec3aa740e51": {
+      "tool": "trae",
+      "conversation_id": "6a4b66fec08371afde98f05e",
+      "session_id": "6a4b66fec08371afde98f05e",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_18cec3aa740e51::t_7eee156c1ad5fc": {
+      "tool": "trae",
+      "conversation_id": "6a4b66fec08371afde98f05e",
+      "session_id": "6a4b66fec08371afde98f05e",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
