@@ -1,0 +1,23 @@
+staging/src/k8s.io/apiserver/pkg/endpoints/handlers/responsewriters/writers.go
+  s_18cec3aa740e51::t_61fa3506750dbb 130
+  s_18cec3aa740e51::t_08120dcabd02a5 144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f6e5c5550843679ffa46c4087961a617f1fe88e2",
+  "prompts": {},
+  "sessions": {
+    "s_18cec3aa740e51": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4b66fec08371afde98f05e",
+        "model": "openrouter-3o__dev",
+        "display_model_name": "openrouter-3o"
+      },
+      "human_author": "YeRongyu <yedou37@zju.edu.cn>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
