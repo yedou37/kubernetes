@@ -2342,6 +2342,15 @@ func (m fakeStorage) GetList(ctx context.Context, key string, opts storage.ListO
 func (m fakeStorage) Watch(_ context.Context, _ string, _ storage.ListOptions) (watch.Interface, error) {
 	return cachertesting.NewMockWatch(), nil
 }
+func (m fakeStorage) EnableResourceSizeEstimation(storage.KeysFunc) error {
+	return nil
+}
+func (m fakeStorage) CompactRevision() int64 {
+	return 0
+}
+func (m fakeStorage) IsWatchListSemanticsUnSupported() bool {
+	return true
+}
 
 func BenchmarkCacher_GetList(b *testing.B) {
 	testCases := []struct {
